@@ -1,0 +1,33 @@
+syntax = "proto3";
+package chatpb;
+
+//option go_package = "github.com/Katsusan/terrachat";
+
+message TerraReq {
+    enum ReqType {
+        ENTER = 0;
+        LEAVE = 1;
+        MSGSEND = 2;
+    };
+    ReqType reqtype = 1;
+    string id = 2;
+    string nickname = 3;
+    string message = 4;
+    enum Gender {
+        UNKNOWN = 0;
+        MALE = 1;
+        FEMALE = 2;
+    }
+    Gender gender = 5;
+};
+
+message TerraResp {
+    enum RespStatus {
+        STATUSOK = 0;
+        STATUSFAILED = 1;
+    };
+    RespStatus status = 1;
+};
+
+
+
